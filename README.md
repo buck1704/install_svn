@@ -24,3 +24,25 @@
 - http://localhost/svn/repository/`tenduan`
 - hiển thị như này là ok:
 ![image](https://github.com/buck1704/install_svn/assets/132087690/ed064c92-f57b-4ed4-80f5-e4df040a4b3e)
+
+# Tắt tường lửa:Để tắt tường lửa trên Ubuntu, bạn có thể thực hiện một số bước như sau:
+
+1. **Mở cmd:**:
+   ```bash
+   sudo apt-get update
+   sudo apt-get install ufw
+   ```
+
+2. **Tắt Tường Lửa:**
+   ```bash
+   sudo ufw disable
+   ```
+3. **Kiểm Tra Trạng Thái:**
+   ```bash
+   sudo ufw status
+   ```
+   Nếu trạng thái hiện tại là "inactive", điều này có nghĩa là tường lửa đã được tắt.
+4. **Khởi Động Lại Máy:**
+   ```bash
+   sudo reboot
+   ```
