@@ -14,6 +14,12 @@ sudo cp dav_svn.conf /etc/apache2/mods-enabled/dav_svn.conf
 
 sudo mkdir /var/lib/svn
 sudo svnadmin create /var/lib/svn/repository
+
+# Tạo các thư mục trunk, branches và tags
+sudo svn mkdir file:///var/lib/svn/repository/trunk -m "Add folder trunk"
+sudo svn mkdir file:///var/lib/svn/repository/branches -m "Add folder branches"
+sudo svn mkdir file:///var/lib/svn/repository/tags -m "Add folder tags"
+
 sudo chown -R www-data:www-data /var/lib/svn
 sudo chmod -R 775 /var/lib/svn
 
