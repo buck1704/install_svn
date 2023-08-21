@@ -111,17 +111,9 @@
    ```bash
 	sudo svn commit -m "add new file by braches"
 	```
-8. **Thử merge:**
+8. **Cập nhật lên local:**
 	```bash
-    cd ../..
-    ```
-	cd trunk
-   ```bash
-	sudo svn merge `url tới branches buck`	
-	```
-9. **Cập nhật lên local:**
-	```bash
-	sudo svn commit -m"merge with buck"	
+	sudo svn commit -m"[merge with buck]"	
 	```
 
  
@@ -164,7 +156,7 @@
 6. **Thêm sự thay đổi**: Sử dụng lệnh `svn commit` để phát hành thay đổi đến kho lưu trữ. 
 
 # H. Một vài lệnh cơ bản:
-### 1. `status`: phát hiện và báo cáo những thay đổi
+### 1. `status:` phát hiện và báo cáo những thay đổi
 #### Hiển thị mọi mục kể cả nó không thay đổi	
    ```bash
 	svn status -v
@@ -179,31 +171,31 @@
 ##### - `item D`: tập tin đưa vào để xoá khỏi repository
 ##### - `item M`: nội dung trong file đã được sửa đổi
 
-### 2. `add`: lên lịch thêm file vào repository
+### 2. `add:` lên lịch thêm file vào repository
    ```bash
 	svn add [target]
    ```
 #### Thêm file mà không thêm nội dung bên trong:
    ```bash
-	svn add --depth=empty file.txt
+	svn add --depth=empty [file.txt]
    ```
 #### Thêm cả thư mục cha nếu nó chưa tồn tại:
    ```bash
-   svn add --parents folder/file.txt
+   svn add --parents [folder/file.txt]
    ```
-### 3. `delete`: xoá file, folder
+### 3. `delete:` xoá file, folder
    ```bash
-   svn delete [target]
+	svn delete [target]
    ```
-### 4. `copy`: sao chép file, folder
+### 4. `copy:` sao chép file, folder
    ```bash
    svn copy [target] [target_copy]
    ```
-### 5. `move`: di chuyển file, folder
+### 5. `move:` di chuyển file, folder
    ```bash
    svn move [file] [file_copy]
    ```
-### 6. `diff`: kiểm tra các thay đổi đã được thực hiện so với phiên bản trước đó hoặc 2 nhánh khác nhau
+### 6. `diff:` kiểm tra các thay đổi đã được thực hiện so với phiên bản trước đó hoặc 2 nhánh khác nhau
    ```bash
 	svn diff [target]
    ```
@@ -211,20 +203,20 @@
 ##### - Nếu không cung cấp `target`, lệnh sẽ so sánh sự khác biệt trong thư mục hiện tại so với phiên bản trước đó.
 #### Ví dụ: xem file a.txt với phiên bản từ 5 -> 7:
    ```bash
-	svn diff -r 5:7 file.txt
+	svn diff -r 5:7 [file.txt]
    ```
-### 7. `revert`: sử dụng để hoàn tác các thay đổi bạn đã thực hiện trên tập tin.
+### 7. `revert:` sử dụng để hoàn tác các thay đổi bạn đã thực hiện trên tập tin.
    ```bash
 	svn revert
    ```
 #### Có thể dùng trong các trường hợp như hoàn tác lại thay đổi của 1 file, hoàn tác lại lệnh add hay delete.
 #### Hoàn tác cả thư mục và nội dung bên trong của 1 folder:
    ```bash
-   svn revert --depth=infinity folder
+   svn revert --depth=infinity [folder]
    ```
-### 8. `log`: hiển thị thông tin về lịch sử thay đổi của mỗi phiên bản:
+### 8. `log:` hiển thị thông tin về lịch sử thay đổi của mỗi phiên bản:
    ```bash
-	svn log file.txt
+	svn log [file]
    ```
 #### Thêm limit để hiển thị giới hạn số lượng:
    ```bash
@@ -234,25 +226,30 @@
    ```bash
 	svn log -r 5:10 file.txt
    ```
-### 9. `cat`: lấy về nội dung của một phiên bản cụ thể của tập tin và hiển thị trên màn hình:
+### 9. `cat:` lấy về nội dung của một phiên bản cụ thể của tập tin và hiển thị trên màn hình:
    ```bash
 	svn cat -r 10 file.txt
    ```
-### 10. `annotate`: hiển thị nội dung của tập tin theo dạng bảng, kèm thông tin về số phiên bản và người thay đổi:
+### 10. `annotate:` hiển thị nội dung của tập tin theo dạng bảng, kèm thông tin về số phiên bản và người thay đổi:
    ```bash
 	svn annotate file.txt
    ```
-### 11. `list`: Liệt kê tập tin trong một thư mục trên kho lưu trữ mà không cần tải về máy.
+### 11. `list:` Liệt kê tập tin trong một thư mục trên kho lưu trữ mà không cần tải về máy.
    ```bash
 	svn list file.txt
    ```
-### 12. `update`: đồng bộ hóa bản sao làm việc với phiên bản mới nhất của dự án.
+### 12. `update:` đồng bộ hóa bản sao làm việc với phiên bản mới nhất của dự án.
    ```bash
 	svn update
    ```
-### 13. `cleanup`: tìm kiếm và hoàn tất các công việc còn lại sau khi có sự cố, ví dụ như máy tính tắt đột ngột. Nó cũng mở khóa bản sao làm việc nếu cần.
+### 13. `merge:` 
+##### Quay về nhánh trunk trước khi merge
    ```bash
-	svn cleanup
+   sudo svn merge [url_to_branch]
+   ```
+### 14. `cleanup:` tìm kiếm và hoàn tất các công việc còn lại sau khi có sự cố, ví dụ như máy tính tắt đột ngột. Nó cũng mở khóa bản sao làm việc nếu cần.
+   ```bash
+   svn cleanup
    ```
 
 
