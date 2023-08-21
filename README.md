@@ -43,7 +43,7 @@
    sudo apt-get install ufw
    ```
 2. Tắt Tường Lửa:
-  	```bash
+   ```bash
    sudo ufw disable
    ```
 4. Kiểm Tra Trạng Thái:
@@ -52,15 +52,15 @@
    ```
    <!-- Nếu trạng thái hiện tại là "inactive", điều này có nghĩa là tường lửa đã được tắt. -->
 5. Khởi Động Lại Máy:
-   	```bash
-   	sudo reboot
-   	```
+   ```bash
+   sudo reboot
+   ```
 # D. Tạo 1 Repository mới:
    ```bash
    REPOS=newRepo
    ```
    ```bash
-	sudo svnadmin create /var/svn/$REPOS
+   sudo svnadmin create /var/svn/$REPOS
    ```
    ```bash
    sudo chown -R www-data:www-data /var/svn/$REPOS
@@ -103,18 +103,18 @@
    sudo touch test.txt
    ```
    ```bash
-	sudo add test.txt
+   sudo add test.txt
    ```
    ```bash
-	sudo svn add test.txt
+   sudo svn add test.txt
    ```
    ```bash
-	sudo svn commit -m "add new file by braches"
-	```
+   sudo svn commit -m "add new file by braches"
+   ```
 8. **Cập nhật lên local:**
-	```bash
-	sudo svn commit -m"[merge with buck]"	
-	```
+   ```bash
+   sudo svn commit -m"[merge with buck]"	
+   ```
 
  
 # F. Install ssh:
@@ -123,20 +123,20 @@
    sudo apt update
    ```
    ```bash
-	sudo apt install openssh-server
+   sudo apt install openssh-server
    ```
    ```bash
-	sudo systemctl status ssh
+   sudo systemctl status ssh
    ```
    ```bash
-	sudo ufw allow ssh
+   sudo ufw allow ssh
    ```
    ```bash
-	ifconfig
+   ifconfig
    ```
-### *Client:*
+### 2. Client:
    ```bash
-	ssh usernameserver@ip
+   ssh usernameserver@ip
    ```
 - `usernameserver`: tên máy ảo đang truy cập
 - `ip`: địa chỉ ip
