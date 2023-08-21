@@ -57,16 +57,7 @@
    ```
 # D. Tạo 1 Repository mới:
    ```bash
-   REPOS=newRepo
-   ```
-   ```bash
    sudo svnadmin create /var/svn/$REPOS
-   ```
-   ```bash
-   sudo chown -R www-data:www-data /var/svn/$REPOS
-   ```
-   ```bash
-   sudo chmod -R g+ws /var/svn/$REPOS
    ```
 # E. Tạo branch:
 1. **Tạo đường dẫn tới svn:**
@@ -77,16 +68,23 @@
 	```bash
 	sudo svn checkout https://localhost/svn/MyRepo MyRepo
 	```
-3. **Tạo 3 file truck, branches, tags:**
+3. **Tạo 3 file trunk, branches, tags:**
    ```bash
-    sudo svn mkdir file:///var/svn/MyRepo/truck -m"commit"
+    sudo svn mkdir file:///var/lib/svn/MyRepo/trunk -m"commit"
     ```
     ```bash
-    sudo svn mkdir file:///var/svn/MyRepo/branches -m"commit"
+    sudo svn mkdir file:///var/lib/svn/MyRepo/branches -m"commit"
     ```
     ```bash
-    sudo svn mkdir file:///var/svn/MyRepo/tags -m"commit"
+    sudo svn mkdir file:///var/lib/svn/MyRepo/tags -m"commit"
     ```
+### Hoặc:
+```bash
+sudo svn mkdir file:///var/lib/svn/MyRepo/trunk -m"commit"
+```
+- tạo 1 file trong trunk
+```bash
+
 4. **Pull bài trên repository:**
 	```bash
 	sudo svn update
