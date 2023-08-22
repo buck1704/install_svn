@@ -58,7 +58,10 @@
 # D. Tạo 1 Repository mới:
    ```bash
    sudo svnadmin create /var/svn/$REPOS
+   sudo chown -R www-data:www-data /var/lib/svn
+   sudo chmod -R 775 /var/lib/svn
    ```
+
 # E. Tạo branch:
 1. **Tạo đường dẫn tới svn:**
 	```bash
@@ -82,13 +85,13 @@
 ```bash
 sudo svn mkdir file:///var/lib/svn/MyRepo/trunk -m"commit"
 ```
-- tạo 1 file trong trunk
-```bash
+- tạo 1 file trong trunk, sau đó commit lên
+- copy đưa vào branch
 
 4. **Pull bài trên repository:**
-	```bash
-	sudo svn update
-	```
+```bash
+sudo svn update
+```
 5. **Tạo file breakup:**
    ```bash
     sudo svn copy truck branches/buck
