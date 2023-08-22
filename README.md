@@ -20,22 +20,7 @@
    	sudo ./setup.sh
    	```
 6. Sau khi thực hiện lệnh sudo trên, chờ cài đặt rồi làm theo hướng dẫn trong cmd là OK
-
-# B. Tạo repository:
-1. Tìm file dự án cần thêm, sau đó mở cmd
-2. Tại `cmd`, gõ:
-   	```bash
-   	svn import . http://localhost/svn/repository/tenduan -m "tenduan"
-   	```
-- Sau đó, sẽ hiển thị yêu cầu nhập mật khẩu, tài khoản
-3. Mở trình duyệt, tìm đường dẫn:
-   	```bash
-   	http://localhost/svn/repository/tenduan
-   	```
-- Hiển thị như này là ok:
-![image](https://github.com/buck1704/install_svn/assets/132087690/ed064c92-f57b-4ed4-80f5-e4df040a4b3e)
-
-# C. **Tắt tường lửa:**
+# B. **Tắt tường lửa:**
 
 1. **Mở cmd:**
    ```bash
@@ -55,14 +40,14 @@
    ```bash
    sudo reboot
    ```
-# D. Tạo 1 Repository mới:
+# C. Tạo 1 Repository mới:
    ```bash
    sudo svnadmin create /var/svn/$REPOS
    sudo chown -R www-data:www-data /var/lib/svn
    sudo chmod -R 775 /var/lib/svn
    ```
 
-# E. Tạo branch:
+# D. Tạo branch:
 1. **Tạo đường dẫn tới svn:**
 	```bash
 	sudo mkdir -p /var/svn
@@ -118,7 +103,7 @@ sudo svn update
    ```
 
  
-# F. Install ssh:
+# E. Install ssh:
 ### 1. Server:
    ```bash
    sudo apt update
@@ -143,7 +128,7 @@ sudo svn update
 - `ip`: địa chỉ ip
 
   
-# G. Chu Kỳ Thực Hiện
+# F. Chu Kỳ Thực Hiện
 1. **Cập nhật bản sao làm việc**: Sử dụng lệnh `svn update` để cập nhật bản sao với những thay đổi mới nhất từ kho lưu trữ.
 
 2. **Thực hiện thay đổi**: Thay đổi các tập tin trong bản sao làm việc bằng các lệnh như `svn add`, `svn delete`, `svn copy`, và `svn move`.
@@ -156,7 +141,7 @@ sudo svn update
 
 6. **Thêm sự thay đổi**: Sử dụng lệnh `svn commit` để phát hành thay đổi đến kho lưu trữ. 
 
-# H. Một vài lệnh cơ bản:
+# G. Một vài lệnh cơ bản:
 ### 1. `status:` phát hiện và báo cáo những thay đổi
 #### Hiển thị mọi mục kể cả nó không thay đổi	
    ```bash
